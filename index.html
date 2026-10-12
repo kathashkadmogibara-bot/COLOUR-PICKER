@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mogibara Colour Picker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="nav-btn" href="../shades/index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="17" r="2.5"/><circle cx="6" cy="17" r="2.5"/><circle cx="12" cy="12" r="2.5"/></svg>
+    Colour Shades
+  </a>
+  <a class="nav-btn" href="../library/index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+    Colour Library
+  </a>
+</div>
+
+<header class="site-header">
+  <div class="brand">MOGIBARA</div>
+  <div class="site-title">Colour Picker</div>
+</header>
+
+<main class="picker-wrap">
+
+  <div class="preview-row">
+    <div class="hue-block" id="hueBlock"></div>
+    <div class="sv-box" id="svBox"><div class="sv-handle" id="svHandle"></div></div>
+  </div>
+
+  <div class="hue-slider-wrap">
+    <input type="range" id="hueSlider" min="0" max="360" value="198">
+  </div>
+
+  <div class="color-name-row">
+    <div class="color-name-chip" id="nameChip"></div>
+    <div class="color-name" id="colorName">—</div>
+  </div>
+
+  <div class="group-title-row">
+    <span class="group-title">Hex</span>
+    <button class="icon-btn-sm" data-copy="hex" title="Copy HEX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></button>
+  </div>
+  <div class="field-row"><label>#</label><input id="hexInput" spellcheck="false" autocomplete="off"></div>
+
+  <div class="group-title-row">
+    <span class="group-title">RGB</span>
+    <button class="icon-btn-sm" data-copy="rgb" title="Copy RGB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></button>
+  </div>
+  <div class="values-grid grid-3">
+    <div class="field-row"><label>R</label><input id="rInput" inputmode="numeric"></div>
+    <div class="field-row"><label>G</label><input id="gInput" inputmode="numeric"></div>
+    <div class="field-row"><label>B</label><input id="bInput" inputmode="numeric"></div>
+  </div>
+
+  <div class="group-title-row">
+    <span class="group-title">CMYK</span>
+    <button class="icon-btn-sm" data-copy="cmyk" title="Copy CMYK"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></button>
+  </div>
+  <div class="values-grid grid-4">
+    <div class="field-row"><label>C</label><input id="cInput" inputmode="numeric"></div>
+    <div class="field-row"><label>M</label><input id="mInput" inputmode="numeric"></div>
+    <div class="field-row"><label>Y</label><input id="yInput" inputmode="numeric"></div>
+    <div class="field-row"><label>K</label><input id="kInput" inputmode="numeric"></div>
+  </div>
+
+  <div class="group-title-row">
+    <span class="group-title">HSV</span>
+    <button class="icon-btn-sm" data-copy="hsv" title="Copy HSV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></button>
+  </div>
+  <div class="values-grid grid-3">
+    <div class="field-row"><label>H</label><input id="hInput" inputmode="numeric"></div>
+    <div class="field-row"><label>S</label><input id="sInput" inputmode="numeric"></div>
+    <div class="field-row"><label>V</label><input id="vInput" inputmode="numeric"></div>
+  </div>
+
+  <div class="group-title-row">
+    <span class="group-title">HSL</span>
+    <button class="icon-btn-sm" data-copy="hsl" title="Copy HSL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></button>
+  </div>
+  <div class="values-grid grid-3">
+    <div class="field-row"><label>H</label><input id="hlInput" inputmode="numeric"></div>
+    <div class="field-row"><label>S</label><input id="slInput" inputmode="numeric"></div>
+    <div class="field-row"><label>L</label><input id="llInput" inputmode="numeric"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">© 2026 <b>MOGIBARA</b> — Colour Room</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
